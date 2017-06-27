@@ -6,9 +6,9 @@
         "jsx": "react",
         "sourceMap": true,
         "allowJs": true,
+        "experimentalDecorators": true,
         "outDir": "dist"
-    }
-    ,
+    },
     "exclude": [
         "node_modules",
         "dist"
