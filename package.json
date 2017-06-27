@@ -1,12 +1,17 @@
 {
   "name": "storybook-utils",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "git@github.com:cexoso/storybook-utils.git",
   "author": "xiongjie <285516193@qq.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/react": "^15.0.32",
+    "@types/recompose": "^0.23.1",
     "react": "^15.6.1",
-    "remarkable": "^1.7.1"
+    "recompose": "^0.23.5",
+    "remarkable": "^1.7.1",
+    "tsc": "^1.20150623.0",
+    "typescript": "^2.3.4"
   }
 }
