@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "git@github.com:cexoso/storybook-utils.git",
   "author": "xiongjie <285516193@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.6.1",
+    "remarkable": "^1.7.1"
+  }
 }
