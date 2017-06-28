@@ -1,23 +1,17 @@
 import * as React from 'react'
 import * as Remarkable from 'remarkable'
 import * as hljs from 'highlight.js'
+import './css'
 
 const md = new Remarkable('full', {
-    html: false,        // Enable HTML tags in source
-    xhtmlOut: false,        // Use '/' to close single tags (<br />)
-    breaks: false,        // Convert '\n' in paragraphs into <br>
-    langPrefix: 'language-',  // CSS language prefix for fenced blocks
-    linkify: true,         // autoconvert URL-like texts to links
-    linkTarget: '',           // set target to open link in
-    // Enable some language-neutral replacements + quotes beautification
+    html: false,
+    xhtmlOut: false,
+    breaks: false,
+    langPrefix: 'language-',
+    linkify: true,
+    linkTarget: '',
     typographer: false,
-
-    // Double + single quotes replacement pairs, when typographer enabled,
-    // and smartquotes on. Set doubles to '«»' for Russian, '„“' for German.
     quotes: '“”‘’',
-
-    // Highlighter function. Should return escaped HTML,
-    // or '' if input not changed
     highlight: function (str, lang) {
         if (lang && hljs.getLanguage(lang)) {
             try {
@@ -31,14 +25,14 @@ const md = new Remarkable('full', {
         return ''; // use external default escaping
     }
 });
-
+const margin16 = { margin: 16 }
 class Md extends React.PureComponent<any, any> {
     render() {
         const { str } = this.props;
         const html = {
             __html: md.render(str)
         }
-        return (<div dangerouslySetInnerHTML={html} />)
+        return (<div dangerouslySetInnerHTML={html} style={margin16} className="markdown-body" />)
     }
 }
 
