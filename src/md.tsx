@@ -1,11 +1,8 @@
 import * as React from 'react'
-import onlyUpdateForKeys from 'recompose/onlyUpdateForKeys'
 import * as Remarkable from 'remarkable'
 
 const md = new Remarkable();
-
-@onlyUpdateForKeys(["str"])
-class Md extends React.Component<any, any> {
+class Md extends React.PureComponent<any, any> {
     render() {
         const { str } = this.props;
         const html = {
